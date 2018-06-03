@@ -1,0 +1,12 @@
+# proxy-test
+静态代理，JDK动态代理，CGLIB动态代理实例
+jdk动态代理《只用于接口》
+1.通过实现InvocationHandler接口来自定义自己的InvocationHandler; 
+2.通过Proxy.getProxyClass获得动态代理类
+3.通过反射机制获得代理类的构造方法，方法签名为getConstructor(InvocationHandler.class)
+4.通过构造函数获得代理对象并将自定义的InvocationHandler实例对象传为参数传入
+5.通过代理对象调用目标方法
+
+cglib动态代理
+CGLib采用了非常底层的字节码技术，其原理是通过字节码技术为一个类创建子类，
+并在子类中采用方法拦截的技术拦截所有父类方法的调用，顺势织入横切逻辑。JDK动态代理与CGLib动态代理均是实现Spring AOP的基础。
